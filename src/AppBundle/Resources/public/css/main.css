@@ -1,0 +1,118 @@
+/* GÉNÉRAL */
+p{
+    text-align: justify;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+article{
+    height: 550px;
+}
+
+/* show.html.twig */
+.img-one-article{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.date-one{
+    margin-top: 20px;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+.tags-one:after{
+    content: ", ";
+}
+
+.tags-one:last-child{
+    content: ".";
+}
+
+#btn-list{
+    width: 200px;
+    margin: 0 auto;
+}
+
+.btn-warning{
+    width: 200px
+}
+
+.back-list{
+    color: #fff;
+}
+
+.back-list:visited{
+    color: #fff;
+}
+
+.back-list:hover{
+    color: #ccc;
+}
+
+/* PAGE CONTACT */
+.blogger-notice{
+    text-align: center;
+    padding: 10px;
+    background: #DFF2BF;
+    border: 1px solid;
+    color: #4F8A10;
+    margin-bottom: 10px;
+}
+
+form.blogger{
+    font-size: 16px;
+}
+
+form.blogger div{
+    clear: left;
+    margin-bottom: 10px;
+}
+
+form.blogger label{
+    float: left;
+    margin-right: 10px;
+    text-align: right;
+    width: 100px;
+    font-weight: bold;
+    vertical-align: top;
+    padding-top: 10px;
+}
+
+form.blogger input[type="text"],
+form.blogger input[type="email"]{
+    width: 500px;
+    line-height: 26px;
+    font-size: 20px;
+    min-height: 26px;
+}
+
+form.blogger textarea{
+    width: 500px;
+    height: 150px;
+    line-height: 26px;
+    font-size: 20px;
+}
+
+form.blogger input[type="submit"]{
+    margin-left: 110px;
+    width: 508px;
+    line-height: 26px;
+    font-size: 20px;
+    min-height: 26px;
+}
+
+form.blogger ul li{
+    color: #ff0000;
+    margin-bottom: 5px;
+}
+
+/* FOOTER */
+footer p{
+    text-align: center;
+    margin-top: 40px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+            <link rel="stylesheet" href="{{ asset('bundles/app/css/main.css') }}"/>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+
+    <body>
+        <div class="container">
+
+        <header>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url('article') }}">Blog Symfony 2</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url('article') }}">Home</a></li>
+                <li><a href="{{ url('category') }}">Categories</a></li>
+                <li><a href="{{ url('tag') }}">Tags</a></li>
+                <li><a href="{{ url('unitato_contact') }}">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li><a href="{{ url('sonata_admin_dashboard') }}">Administration</a></li>
+                    <li><a href="{{ url('fos_user_security_logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url('fos_user_security_login') }}">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        </header>
+
+            {% block body %}
+
+            {% endblock %}
+
+            <footer>
+                <p>Site developped by Valentine ROGEN - Symfony 2 - License MIT</p>
+            </footer>
+        </div>
+
+        {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        {% endblock %}
+    </body>
+</html>

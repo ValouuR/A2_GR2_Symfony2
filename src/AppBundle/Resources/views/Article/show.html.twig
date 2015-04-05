@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>{{ article.title }}</h1>
+
+    <figure>
+        <img src="{{ article.picture|default(asset('bundles/app/img/default-article.jpg')) }}" alt="{{ article.title }}" class="img-responsive img-one-article">
+    </figure>
+
+    <p class="date-one">{{ article.date|date('F jS, Y') }}</p>
+    <p>{{ article.content }}</p>
+
+    <br>
+
+    <p class="cat-one"><strong>In category :</strong> {{ article.category }}</p>
+
+    <p><strong>Tags :</strong>
+        {% for tag in article.tag %}
+            <span class="tags-one">{{ tag.name }}</span>
+        {% endfor %}
+    </p>
+
+    <div id="btn-list">
+        <button type="button" class="btn btn-warning">
+            <a href="{{ url('article') }}" class="back-list">Back to the list</a>
+        </button>
+    </div>
+{% endblock %}
